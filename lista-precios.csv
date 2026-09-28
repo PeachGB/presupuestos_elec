@@ -1,0 +1,27 @@
+categoria,servicio,unidad,variante,precio
+Diagnostico y hora,Visita + diagnostico + presupuesto,visita,,28000
+Diagnostico y hora,Hora de trabajo,hora,,18000
+Diagnostico y hora,Recargo urgencia noche finde feriado,recargo,,40000
+Tomas puntos e iluminacion,Boca completa,boca,embutido,48000
+Tomas puntos e iluminacion,Boca completa,boca,exterior,34000
+Tomas puntos e iluminacion,Agregar toma / interruptor boca nueva,boca,embutido,25000
+Tomas puntos e iluminacion,Agregar toma / interruptor boca nueva,boca,exterior,16000
+Tomas puntos e iluminacion,Recableado por boca sin artefacto,boca,embutido,25000
+Tomas puntos e iluminacion,Recableado por boca sin artefacto,boca,exterior,18000
+Tomas puntos e iluminacion,Cambiar / reemplazar toma o interruptor existente,ud,,18000
+Tomas puntos e iluminacion,Toma doble / punto combinacion sobre boca existente,ud,,20000
+Tomas puntos e iluminacion,Colocar aplique / spot LED,ud,,18000
+Tomas puntos e iluminacion,Colgante / lampara con efectos,ud,,32000
+Tomas puntos e iluminacion,Ventilador de techo,ud,,42000
+Tomas puntos e iluminacion,Ventilador con luminaria,ud,,52000
+Reparaciones,Busqueda y reparacion de cortocircuito / falla,trabajo,,40000
+Reparaciones,Revision completa de tablero,trabajo,,32000
+Tableros y protecciones,Armado de tablero base,tablero,exterior,85000
+Tableros y protecciones,Armado de tablero base,tablero,embutido,115000
+Tableros y protecciones,Modulo bipolar en el armado,modulo,,15000
+Tableros y protecciones,Modulo tetrapolar en el armado,modulo,,28000
+Tableros y protecciones,Cambio de TM suelto tablero existente,ud,,26000
+Tableros y protecciones,Cambio de ID suelto tablero existente,ud,,32000
+Puesta a tierra y acometida,Puesta a tierra jabalina y caja de inspeccion,ud,,65000
+Puesta a tierra y acometida,Gabinete 1 medidor monofasico,ud,,120000
+Puesta a tierra y acometida,Pilar completo,ud,,450000
