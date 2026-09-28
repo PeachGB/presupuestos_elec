@@ -11,7 +11,7 @@ export interface Business {
 
 export const BUSINESS: Business = {
   name: 'Electricidad Domiciliaria',
-  whatsapp: '+54 9 221 000-0000',
+  whatsapp: '+54 9 221 631-9417',
   area: 'La Plata y alrededores',
 };
 
