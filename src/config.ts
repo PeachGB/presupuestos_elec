@@ -10,7 +10,7 @@ export interface Business {
 }
 
 export const BUSINESS: Business = {
-  name: 'Electricidad Domiciliaria',
+  name: 'Electricista Mateos',
   whatsapp: '+54 9 221 631-9417',
   area: 'La Plata y alrededores',
 };
