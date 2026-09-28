@@ -101,3 +101,14 @@ describe('parsePrice', () => {
     expect(parsePrice(raw)).toBeNull();
   });
 });
+
+describe('buildCatalog: variantes mezcladas', () => {
+  it('si un servicio tiene filas con y sin variante, se queda con las variantes y avisa', () => {
+    const { catalog, warnings } = parseCatalog([HEADER, 'A,X,ud,,1', 'A,X,ud,exterior,2', 'A,X,ud,embutido,3'].join('\n'));
+    expect([...catalog.byId.values()][0]?.options).toEqual([
+      { variant: 'embutido', price: 3 },
+      { variant: 'exterior', price: 2 },
+    ]);
+    expect(warnings).toHaveLength(1);
+  });
+});

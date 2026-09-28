@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#141414" />
+    <meta name="description" content="Calculadora de presupuestos de mano de obra eléctrica domiciliaria." />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Presupuestos" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <title>Presupuestos · Electricidad</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <h1 class="brand">
+          <svg class="brand-bolt" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <path d="M38 4 14 36h16l-6 24 26-34H34z" />
+          </svg>
+          Presupuesto
+        </h1>
+        <button id="new-quote" class="btn btn-ghost" type="button" aria-label="Nuevo presupuesto">
+          Nuevo<span class="wide-only">&nbsp;presupuesto</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="client">
+        <label class="field-label" for="client-name">Cliente <span class="optional">(opcional)</span></label>
+        <input
+          id="client-name"
+          class="text-input"
+          type="text"
+          autocomplete="off"
+          autocapitalize="words"
+          enterkeyhint="done"
+          placeholder="Nombre del cliente"
+        />
+      </div>
+      <p class="hint">Precios de mano de obra. Tocá un precio para editarlo.</p>
+
+      <div id="catalog" class="catalog">
+        <p class="status">Cargando lista de precios…</p>
+      </div>
+
+      <div class="tools">
+        <button id="reset-prices" class="btn btn-ghost" type="button" disabled>Restaurar precios</button>
+      </div>
+    </main>
+
+    <footer class="totalbar" id="totalbar">
+      <div class="totalbar-inner">
+        <div class="total">
+          <span class="total-label">Total <span id="item-count" class="total-meta">· Sin ítems</span></span>
+          <output id="total" class="total-amount">$ 0</output>
+        </div>
+        <div class="actions">
+          <button id="copy" class="btn btn-primary" type="button">Copiar presupuesto</button>
+          <button id="pdf-download" class="btn btn-icon" type="button" aria-label="Descargar PDF">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" /></svg>
+            <span aria-hidden="true">PDF</span>
+          </button>
+          <button id="pdf-share" class="btn btn-icon" type="button" aria-label="Compartir PDF" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 15V3m0 0L7 8m5-5 5 5M5 12v8h14v-8" /></svg>
+            <span aria-hidden="true">Compartir</span>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <noscript><p class="status">Esta app necesita JavaScript activado.</p></noscript>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

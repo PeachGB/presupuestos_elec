@@ -1,4 +1,5 @@
 import { parseCsv } from './csv';
+import { slug } from './slug';
 import { VARIANTS, type Catalog, type Category, type PriceRow, type Service, type Variant } from './types';
 
 const REQUIRED_COLUMNS = ['categoria', 'servicio', 'unidad', 'variante', 'precio'] as const;
@@ -98,6 +99,11 @@ export function buildCatalog(rows: readonly PriceRow[], warnings: string[] = [])
   }
 
   for (const service of byId.values()) {
+    if (service.options.length > 1 && service.options.some((o) => o.variant === null)) {
+      // Un servicio con toggle no puede tener además un precio "sin variante".
+      warnings.push(`"${service.name}" mezcla filas con y sin variante; se ignora la fila sin variante.`);
+      service.options = service.options.filter((o) => o.variant !== null);
+    }
     service.options.sort((a, b) => variantOrder(a.variant) - variantOrder(b.variant));
   }
   return { categories, byId };
@@ -119,13 +125,4 @@ function variantOrder(variant: Variant | null): number {
 /** Id estable y legible: "tableros-y-protecciones__armado-de-tablero-base__tablero". */
 export function serviceId(category: string, service: string, unit: string): string {
   return [category, service, unit].map(slug).join('__');
-}
-
-function slug(text: string): string {
-  return text
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
 }
